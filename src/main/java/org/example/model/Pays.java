@@ -46,5 +46,37 @@ public class Pays {
         this.lesMedailles = lesMedailles;
     }
 
+    public int getNbAthletes() {
+        return this.lesAthletes.size();
+    }
 
+    public int getNbPoints() {
+        int total = 0;
+        for (PaysMedaille pm : lesMedailles) {
+            total += pm.getMedaille().getNbPoints();
+        }
+        return total;
+    }
+
+    public int getNbMedaillesParType(String type) {
+        int count = 0;
+        for (PaysMedaille pm : lesMedailles) {
+            if (pm.getMedaille().getNom().equalsIgnoreCase(type)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getNbMedaillesOr() {
+        return getNbMedaillesParType("Or");
+    }
+
+    public int getNbMedaillesArgent() {
+        return getNbMedaillesParType("Argent");
+    }
+
+    public int getNbMedaillesBronze() {
+        return getNbMedaillesParType("Bronze");
+    }
 }

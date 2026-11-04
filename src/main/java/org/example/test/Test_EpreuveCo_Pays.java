@@ -4,19 +4,23 @@ import org.example.model.*;
 
 public class Test_EpreuveCo_Pays {
     public static void main(String[] args) {
+        Pays france = new Pays(1, "France");
+        Pays espagne = new Pays(2, "Espagne");
 
-        Pays pays = new Pays(1, "France");
+        Sport volley = new Sport(1, "Volley");
 
-        Sport sport = new Sport(1,"Volley");
+        EpreuveCollective epreuveCo = new EpreuveCollective(1, volley, "Volley à 3", 90, 4);
 
-        EpreuveCollective epreuveCollective = new EpreuveCollective(1, sport,"Volley à 3",60, 4);
+        epreuveCo.getLesParticipations().add(new ParticipationPaysEpreuveCo(france, epreuveCo));
+        epreuveCo.getLesParticipations().add(new ParticipationPaysEpreuveCo(espagne, epreuveCo));
 
-        ParticipationPaysEpreuveCo participation = new ParticipationPaysEpreuveCo(pays, epreuveCollective);
+        System.out.println("Épreuve : " + epreuveCo.getNom() + " (Sport : " + epreuveCo.getSport().getNom() + ")");
+        System.out.println("Durée min : " + epreuveCo.getDureeMin() + " min | Nombre de tours : " + epreuveCo.getNbTours());
+        System.out.println("Nombre total de pays participants : " + epreuveCo.getNbPays());
 
-        System.out.println("Le pays " + participation.getPays().getNom() +" (ID: " + participation.getPays().getId() + ")," +
-                " participe à l'épreuve collective "+ participation.getEpreuveCo().getNom() +" (ID: " + participation.getEpreuveCo().getId() + ").");
+        System.out.println("Liste des participants :");
+        for (ParticipationPaysEpreuveCo p : epreuveCo.getLesParticipations()) {
+            System.out.println("- " + p.getPays().getNom());
+        }
     }
-
-
-
 }
