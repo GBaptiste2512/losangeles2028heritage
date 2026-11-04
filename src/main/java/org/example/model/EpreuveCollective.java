@@ -6,8 +6,8 @@ public class EpreuveCollective extends  Epreuve {
     private float dureeMin;
     private int nbTours;
 
-    public EpreuveCollective(int id,String nom ,float dureeMin, int nbTours) {
-        super(id);
+    public EpreuveCollective(int id,Sport sport,String nom ,float dureeMin, int nbTours) {
+        super(id ,sport);
         this.nom= nom;
         this.dureeMin = dureeMin;
         this.nbTours = nbTours;

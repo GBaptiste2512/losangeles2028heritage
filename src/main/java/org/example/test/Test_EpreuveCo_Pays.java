@@ -7,7 +7,9 @@ public class Test_EpreuveCo_Pays {
 
         Pays pays = new Pays(1, "France");
 
-        EpreuveCollective epreuveCollective = new EpreuveCollective(1, "Volley",60, 4);
+        Sport sport = new Sport(1,"Volley");
+
+        EpreuveCollective epreuveCollective = new EpreuveCollective(1, sport,"Volley à 3",60, 4);
 
         ParticipationPaysEpreuveCo participation = new ParticipationPaysEpreuveCo(pays, epreuveCollective);
 

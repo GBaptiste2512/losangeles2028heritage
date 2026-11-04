@@ -4,8 +4,8 @@ public class EpreuveIndividuelle extends  Epreuve{
 
     private String recordOlympique ;
 
-    public EpreuveIndividuelle(int id, String recordOlympique) {
-        super(id);
+    public EpreuveIndividuelle(int id,Sport sport ,String recordOlympique) {
+        super(id,sport);
         this.recordOlympique = recordOlympique;
     }
 
