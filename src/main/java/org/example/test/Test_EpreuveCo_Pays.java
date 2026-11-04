@@ -14,11 +14,11 @@ public class Test_EpreuveCo_Pays {
         epreuveCo.getLesParticipations().add(new ParticipationPaysEpreuveCo(france, epreuveCo));
         epreuveCo.getLesParticipations().add(new ParticipationPaysEpreuveCo(espagne, epreuveCo));
 
-        System.out.println("Épreuve : " + epreuveCo.getNom() + " (Sport : " + epreuveCo.getSport().getNom() + ")");
-        System.out.println("Durée min : " + epreuveCo.getDureeMin() + " min | Nombre de tours : " + epreuveCo.getNbTours());
-        System.out.println("Nombre total de pays participants : " + epreuveCo.getNbPays());
+        System.out.println("Épreuve : " + epreuveCo.getNom() + " (Sport : " + epreuveCo.getSport().getNom() + ")"); // resultat attendu = "Épreuve : Volley à 3 (Sport : Volley)"
+        System.out.println("Durée min : " + epreuveCo.getDureeMin() + " min | Nombre de tours : " + epreuveCo.getNbTours()); // resultat attendu = 4
+        System.out.println("Nombre total de pays participants : " + epreuveCo.getNbPays()); // resultat attendu = 2
 
-        System.out.println("Liste des participants :");
+        System.out.println("Liste des participants :");  // resultat attendu = France , Espagne
         for (ParticipationPaysEpreuveCo p : epreuveCo.getLesParticipations()) {
             System.out.println("- " + p.getPays().getNom());
         }
